@@ -32,8 +32,8 @@ function M.config()
         key = type,
         location = location,
       }
-    else
-      return require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+      -- else
+      --   return require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
     end
   end
 
