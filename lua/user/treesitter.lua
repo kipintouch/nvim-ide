@@ -15,7 +15,9 @@ local M = {
     },
   },
 }
+
 function M.config()
+
   -- local treesitter = require "nvim-treesitter"
   local configs = require "nvim-treesitter.configs"
 
@@ -39,10 +41,6 @@ function M.config()
       enable_autocmd = false,
     },
   }
-
-  vim.o.foldmethod = 'expr'
-  vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
-
 end
 
 return M

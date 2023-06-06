@@ -62,3 +62,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt_local.colorcolumn = "120"
   end,
 })
+
+-- Folding and General settings for all files
+vim.api.nvim_create_autocmd({ "BufRead" }, {
+  pattern = { "*" },
+  callback = function()
+    local ok, _ = pcall(require, "nvim-treesitter")
+    if ok then
+      vim.opt_local.foldmethod = "expr"
+      vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
+    end
+  end,
+})
